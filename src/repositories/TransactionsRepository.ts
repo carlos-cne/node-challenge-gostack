@@ -12,7 +12,7 @@ interface CreateTransactionDTO {
   type: 'outcome' | 'income';
 }
 
-interface GetBalanceData {
+interface SummaryTransactionsBalanceData {
   transactions: Transaction[];
   balance: Balance;
 }
@@ -24,7 +24,7 @@ class TransactionsRepository {
     this.transactions = [];
   }
 
-  public all(): GetBalanceData {
+  public all(): SummaryTransactionsBalanceData {
     const transations = {
       transactions: this.transactions,
       balance: this.getBalance(),
